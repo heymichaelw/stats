@@ -10,6 +10,9 @@
   "license": "ISC",
   "dependencies": {
     "bluebird": "^3.5.0",
-    "mongoose": "^4.10.8"
+    "express": "^4.15.4",
+    "mongoose": "^4.10.8",
+    "passport": "^0.3.2",
+    "passport-http": "^0.3.0"
   }
 }
