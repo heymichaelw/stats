@@ -13,4 +13,8 @@ mongoose.connect('mongodb://localhost:27017/statdb');
 app.get("/api/tasks", controllers.tasks);
 app.post("/api/tasks", controllers.newTask);
 
+app.get("/api/tasks/:id", controllers.viewTask);
+
+app.put("/api/tasks/:id", controllers.updateTask);
+
 app.listen(3001);
