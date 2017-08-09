@@ -38,5 +38,17 @@ module.exports = {
       var message = "Removed!";
       res.json(message);
     });
+  },
+  updateStats: function(req, res){
+    var newStat = {
+      type: req.body.type,
+      number: req.body.number
+    };
+    var id = req.params.id;
+    Task.findById(id).then(function(task){
+      task.stats.push(newStat);
+      task.save();
+      res.json(task);
+    });
   }
 };
