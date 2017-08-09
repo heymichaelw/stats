@@ -17,4 +17,6 @@ app.get("/api/tasks/:id", controllers.viewTask);
 
 app.put("/api/tasks/:id", controllers.updateTask);
 
+app.delete("/api/tasks/:id", controllers.deleteTask);
+
 app.listen(3001);

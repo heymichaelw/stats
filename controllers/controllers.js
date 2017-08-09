@@ -29,5 +29,14 @@ module.exports = {
       task.save();
       res.json(task);
     });
+  },
+  deleteTask: function(req, res){
+    var id = req.params.id;
+    Task.deleteOne({
+      _id: id
+    }).then(function(){
+      var message = "Removed!";
+      res.json(message);
+    });
   }
 };
