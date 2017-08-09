@@ -44,5 +44,6 @@ app.delete("/api/tasks/:id", passport.authenticate('basic', {session: false}), c
 
 app.post("/api/tasks/:id/stats", passport.authenticate('basic', {session: false}), controllers.updateStats);
 
+app.delete("/api/stats/:id", passport.authenticate('basic', {session: false}), controllers.deleteStats);
 
-app.listen(3001);
+app.listen(3000);

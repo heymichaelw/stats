@@ -50,5 +50,16 @@ module.exports = {
       task.save();
       res.json(task);
     });
+  },
+  deleteStats: function(req, res){
+    // https://stackoverflow.com/questions/31105057/trying-to-remove-a-nested-object-in-mongoose
+    var id = req.params.id;
+    var statId = req.body.statId;
+    Task.update({_id: id}, {
+      $pull: {'stats': {_id: statId}}
+    }
+  ).then(function(task){
+    res.json(task);
+  });
   }
 };
